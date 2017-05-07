@@ -12,10 +12,10 @@ public class Print1ToMaxOfDigits {
         while (sc.hasNext()) {
             int n = sc.nextInt();
             int[] number = new int[n];
-            while (!increment(number)) {
-                printNumber(number);
-            }
-            //printMaxOfNdigits2(n);
+//            while (!increment(number)) {
+//                printNumber(number);
+//            }
+            printMaxOfNdigits2(n);
 
         }
     }
