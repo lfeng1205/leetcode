@@ -37,8 +37,11 @@ public class ReverseList {
                 newHead = pNode;
             }
 
+            //将链表反转
             pNode.next = pPrev;
             pPrev = pNode;
+
+            //为防止链表断裂，将写一个节点的值，保存下来
             pNode = pNext;
         }
 
