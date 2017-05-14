@@ -51,11 +51,11 @@ public class PathInTree {
             listAll.add(new ArrayList<>(list));
         }
 
-        //采用递归
+        //采用递归，回到父节点
         findPath(root.left, target);
         findPath(root.right, target);
 
-        //节点回溯
+        //删除当前节点
         list.remove(list.size() - 1);
 
         return listAll;
