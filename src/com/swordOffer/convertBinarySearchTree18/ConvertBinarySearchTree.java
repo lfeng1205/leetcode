@@ -48,10 +48,10 @@ public class ConvertBinarySearchTree {
         }
 
         //转换右子树
-        TreeNode right = convertNode(pRootOfTree.right);
-        if (right != null) {
-            pRootOfTree.right = right;
-            right.left = pRootOfTree;
+        TreeNode pRight = convertNode(pRootOfTree.right);
+        if (pRight != null) {
+            pRootOfTree.right = pRight;
+            pRight.left = pRootOfTree;
         }
 
         return pLeft != null ? pLeft : pRootOfTree;
