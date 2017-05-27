@@ -37,16 +37,16 @@ public class NumberOfOne {
             lowNum = inputNum % factor;
             highNum = inputNum / (factor * 10);
 
-            //如果当前位数字为0的话，那么他完全由高位的数字决定
-            //比如12013，百位数字为1，那么百位上数字为1的仅仅是12*100个
+            //如果为0,出现1的次数由高位决定,等于高位数字 * 当前位数
             if (curNum == 0) {
                 //表示10,101的情况
                 count += factor * highNum;
             } else if (curNum == 1) {
-                //这个1是100,1000整的时候
+                //如果为1,出现1的次数由高位和低位决定,高位*当前位+低位+1
                 count += factor * highNum + lowNum + 1;
             } else {
-                //这个就不用加1了，因为在1*factor中包括了100,1000的情况
+                //如果大于1,出现1的次数由高位决定,
+                //高位数字+1* 当前位数
                 count += factor * (highNum + 1);
             }
 
