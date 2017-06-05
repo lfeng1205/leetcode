@@ -3,6 +3,7 @@ package com.swordOffer.firstCommonNodeInList28;
 /**
  * Created by Feng on 2017/6/5.
  * 输入两个链表，找出它们的第一个公共结点。
+ * 每个节点的值不同
  */
 public class FirstCommonNodeInList {
     public static void main(String[] args) {
