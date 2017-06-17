@@ -22,7 +22,7 @@ public class LastNumberOfCircle {
             return -1;
         }
 
-        //last为原序列的下标
+        //last为原序列最后一个数字的下标
         int last = 0;
         for (int i = 2; i <= n; i++) {
             //每次变化都是移除一个m，比如第一次移除2，然后剩下的3,4,0,1这四个数
