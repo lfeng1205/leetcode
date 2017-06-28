@@ -27,11 +27,10 @@ public class PrintTreesInZigzag {
         node3.left = node6;
         node3.right = node7;
 
-        printTreesInZigzag2(node1);
-//        ArrayList<ArrayList<Integer>> result = printTreesInZigzag(node1);
-//        for (ArrayList<Integer> list : result) {
-//            System.out.println(list);
-//        }
+        ArrayList<ArrayList<Integer>> result = printTreesInZigzag2(node1);
+        for (ArrayList<Integer> list : result) {
+            System.out.println(list);
+        }
     }
 
     private static ArrayList<ArrayList<Integer>> printTreesInZigzag(TreeNode pRoot) {
@@ -83,10 +82,10 @@ public class PrintTreesInZigzag {
         return arrayLists;
     }
 
-    private static void printTreesInZigzag2(TreeNode pRoot) {
+    private static ArrayList<ArrayList<Integer>> printTreesInZigzag2(TreeNode pRoot) {
 
         if (pRoot == null) {
-            return ;
+            return null;
         }
 
         ArrayList<ArrayList<Integer>> arrayLists = new ArrayList<>();
@@ -110,7 +109,6 @@ public class PrintTreesInZigzag {
                     TreeNode pNode = leftToRight.pop();
                     if (pNode != null) {
                         list.add(pNode.val);
-                        System.out.print(pNode.val + " ");
                         rightToleft.push(pNode.left);
                         rightToleft.push(pNode.right);
                     }
@@ -118,7 +116,6 @@ public class PrintTreesInZigzag {
                 if (!list.isEmpty()) {
                     arrayLists.add(list);
                     layer++;
-                    System.out.println();
                 }
                 //偶数层的情况
             } else {
@@ -127,7 +124,6 @@ public class PrintTreesInZigzag {
                     TreeNode pNode = rightToleft.pop();
                     if (pNode != null) {
                         list.add(pNode.val);
-                        System.out.print(pNode.val + " ");
                         leftToRight.push(pNode.right);
                         leftToRight.push(pNode.left);
                     }
@@ -135,10 +131,10 @@ public class PrintTreesInZigzag {
                 if (!list.isEmpty()) {
                     arrayLists.add(list);
                     layer++;
-                    System.out.println();
                 }
             }
         }
+        return arrayLists;
     }
 }
 
